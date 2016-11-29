@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nonstop Color</title>
+	<link rel="shortcut icon" href="http://www.iconarchive.com/download/i89521/alecive/flatwoken/Apps-Color-B.ico"/>
+	<meta name="viewport" content="width = device - width, initial-scale = 1.0">
+</head>
+<style type="text/css">
+	@media screen and (max-width: 2560px){
+		body{
+			margin: 0;
+			background: black;
+		}
+		h1{
+			text-align: center;
+			margin-top: 23%;
+			color: #424242;
+		}
+		#note2{
+			visibility: hidden;
+		}
+		#shape{
+			position: fixed;
+			width: 100%;
+			height: 100%;
+		}
+		#shape2{
+			background: black;
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			color: #000000;
+			text-align: center;
+			font-size: 40px;
+			padding: 1% 0;
+		}
+		h5{
+			color: black;
+			text-align: right;
+			margin-right: 20px;
+			margin-top: 20px;
+		}
+	}
+	@media screen and (max-width: 380px){
+		#note{
+			visibility: hidden;
+		}
+		#note2{
+			visibility: visible;
+			text-align: center;
+			margin-top: 50%;
+			color: #424242;
+		}
+		#shape2{
+			padding: 4% 0;
+		}
+	}
+</style>
+<body id="body" onkeydown="change()">
+		<div id="shape" onclick="change()">
+			<h1 id="note">PRESS KEY / CLICK</h1>
+			<h1 id="note2">TAP</h1>
+		</div>
+		<div id="shape2">
+		</div>
+		<h5 id="info">fb.com/ldrin01<br>
+		twitter.com/Eldrin01<br>
+		instagram.com/drindrin04/?hl=en</h5>
+<script type="text/javascript">
+	var hex = Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
+	function change() {
+    	document.getElementById("note").innerHTML = "";
+    	document.getElementById("note2").innerHTML = "";
+		var r = mixer();
+		var g = mixer();
+		var b = mixer();
+		var color = "#"+r+g+b;
+    	document.getElementById("body").style = "transition: 190ms";
+    	document.getElementById("body").style.background = color;
+    	document.getElementById("shape2").innerHTML = color;
+    	document.getElementById("shape2").style = "transition: 280ms";
+    	document.getElementById("shape2").style.color = color;
+    	document.getElementById("info").style.color = "#000000";
+    	document.getElementById("info").style= "opacity: .2";
+	}
+	function mixer(){
+		var temp = hex[Math.floor(Math.random() * hex.length + 0)] + hex[Math.floor(Math.random() * hex.length + 0)];
+		return temp;
+	}
+</script>
+</body>
+</html>
+
